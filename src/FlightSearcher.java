@@ -2,9 +2,10 @@ import java.sql.*;
 
 public class FlightSearcher {
     //Returning a ResultSet of flights with atleast 1 open seat given a departure and arrival location
+    private PreparedStatement preparedStatement = null;
+   private ResultSet resultSet = null;
     public ResultSet searchAllFlights(String departure, String arrival){
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
+
         try{
             //open a database connection
             Connection connection = DriverManager.getConnection("jdbc:mysql://airlinedatabase.ceof6ckatc9m.us-east-2.rds.amazonaws.com:3306/airlineDatabase", "admin", "!Javathehut23");
@@ -22,4 +23,6 @@ public class FlightSearcher {
         }
         return resultSet;
     }
+
+
 }
