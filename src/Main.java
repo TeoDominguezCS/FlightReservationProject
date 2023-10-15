@@ -7,7 +7,7 @@ public class Main {
         String arrival = "New York (JFK)";
         try {
             ResultSet testSet = null;
-            testSet = a.searchAllFlights(arrival, departure);
+            testSet = a.searchAllFlights(arrival, departure, 0);
             //testing ResultSet returned correctly by printing (didn't print the whole row btw)
             //EXPECTED: 104 New York (JFK) Los Angeles (LAX)
             //          105 New York (JFK) Los Angeles (LAX)
