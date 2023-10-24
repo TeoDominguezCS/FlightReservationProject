@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.List;
 
 public class flightCabin {
-    private int currFlightID, totalReservationPrice;
+    private int cabinID, totalReservationPrice;
     private int currIndex =0;
     private String query;
     private PreparedStatement preparedStatement;
@@ -11,6 +11,21 @@ public class flightCabin {
     private String url = "jdbc:mysql://airlinedatabase.ceof6ckatc9m.us-east-2.rds.amazonaws.com:3306/airlineDatabase";
     private String username = "admin";
     private String password = "!Javathehut23";
+
+    public flightCabin(){
+
+    }
+    public flightCabin(int cabinID){
+        this.cabinID = cabinID;
+    }
+
+    public void setCabinID(int cabinID){
+        this.cabinID = cabinID;
+    }
+    public int getCabinID(){
+        return cabinID;
+    }
+
 
 // These three getters will mostly be used to return current available seats based on their cabins & can be found with a flightID
     public int getCurrEconomySeat(int flightID) throws SQLException {
@@ -207,5 +222,7 @@ can furthermore be displayed for checkout price
 
         return totalReservationPrice;
     }
-
+/*
+TODO: do Getters and setters for current flightID
+ */
 }
