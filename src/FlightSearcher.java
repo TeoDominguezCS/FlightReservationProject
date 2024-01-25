@@ -8,7 +8,7 @@ public class FlightSearcher {
 
         try{
             //open a database connection
-            Connection connection = DriverManager.getConnection("jdbc:mysql://airlinedatabase.ceof6ckatc9m.us-east-2.rds.amazonaws.com:3306/airlineDatabase", "admin", "!Javathehut23");
+            Connection connection = DriverManager.getConnection("URL", "USER", "PASSWORD");
             //sql statement to execute with prepared statement
             String sql = "SELECT * FROM flightsTable WHERE departureLocation=? AND arrivalLocation=? AND (currFirstSeats > 0 OR currBusinessSeats > 0 OR currEconomySeats > 0)";
             preparedStatement = connection.prepareStatement(sql);
